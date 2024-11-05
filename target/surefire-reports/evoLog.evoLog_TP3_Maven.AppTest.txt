@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: evoLog.evoLog_TP3_Maven.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in evoLog.evoLog_TP3_Maven.AppTest
