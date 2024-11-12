@@ -59,6 +59,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spoon -->
+		<dependency>
+			<groupId>fr.inria.gforge.spoon</groupId>
+			<artifactId>spoon-core</artifactId>
+			<version>11.1.0</version>
+		</dependency>
+
+
 		<!-- Validation -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

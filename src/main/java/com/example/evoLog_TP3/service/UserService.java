@@ -1,8 +1,11 @@
 package com.example.evoLog_TP3.service;
 
 
+import com.example.evoLog_TP3.controller.UserController;
 import com.example.evoLog_TP3.model.User;
 import com.example.evoLog_TP3.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +13,7 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -39,6 +43,7 @@ public class UserService {
     public User authenticateUser(String email, String password) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Invalid email or password."));
+        logger.info("Searching user");
         // In a real application, passwords should be hashed and verified accordingly.
         if (!user.getPassword().equals(password)) {
             throw new RuntimeException("Invalid email or password.");

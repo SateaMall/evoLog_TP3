@@ -22,7 +22,6 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Validated @RequestBody User user) {
         try {
-            logger.info("Createing User...");
             User createdUser = userService.registerUser(user);
             createdUser.setPassword(null); // Hide password in response
             logger.info("User registered successfully: {}", createdUser.getEmail());
@@ -37,6 +36,7 @@ public class UserController {
         try {
             User authenticatedUser = userService.authenticateUser(user.getEmail(), user.getPassword());
             authenticatedUser.setPassword(null); // Hide password in response
+            logger.info("User connected successfully: {}", authenticatedUser.getEmail());
             return new ResponseEntity<>(authenticatedUser, HttpStatus.OK);
         } catch (RuntimeException ex) {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
