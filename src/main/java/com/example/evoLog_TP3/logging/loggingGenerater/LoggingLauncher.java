@@ -1,4 +1,4 @@
-package com.example.evoLog_TP3.logging;
+package com.example.evoLog_TP3.logging.loggingGenerater;
 
 import spoon.Launcher;
 

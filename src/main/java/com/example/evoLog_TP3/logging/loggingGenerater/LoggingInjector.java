@@ -1,4 +1,4 @@
-package com.example.evoLog_TP3.logging;
+package com.example.evoLog_TP3.logging.loggingGenerater;
 
 
 import spoon.reflect.code.CtCodeSnippetStatement;
@@ -23,7 +23,7 @@ public class LoggingInjector extends AbstractProcessor<CtMethod<?>> {
     private CtCodeSnippetStatement createLogStatement(CtMethod<?> method) {
         Factory factory = getFactory();
         CtCodeSnippetStatement logStatement = factory.Code().createCodeSnippetStatement(
-                "logger.info(\"User action logged for method: " + method.getSimpleName() + "\")"
+                "logger.info(\"User action logged for user: \" + userId + \" in method: " + method.getSimpleName() + "\")"
         );
         return logStatement;
     }
