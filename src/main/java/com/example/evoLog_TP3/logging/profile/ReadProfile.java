@@ -5,10 +5,6 @@ import java.util.List;
 public class ReadProfile extends UserProfile{
     private int readOperations;
 
-    public ReadProfile(int readOperations, String userId, List<String> actions) {
-        super(userId,actions);
-        this.readOperations = readOperations;
-    }
 
     public ReadProfile( String userId) {
         super(userId);

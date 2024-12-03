@@ -5,10 +5,6 @@ import java.util.List;
 public class WriteProfile extends UserProfile {
     private int writeOperations;
 
-    public WriteProfile(int writeOperations, String userId, List<String> actions) {
-        super(userId,actions);
-        this.writeOperations = writeOperations;
-    }
 
     public WriteProfile( String userId) {
         super(userId);

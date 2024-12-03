@@ -14,6 +14,13 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+
+    public Product getMostExpensiveProduct() {
+        return productRepository.findAll()
+                .stream()
+                .max((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()))
+                .orElseThrow(() -> new RuntimeException("No products available."));
+    }
     public Product addProduct(Product product) {
         if (productRepository.existsById(product.getId())) {
             throw new RuntimeException("Product with this ID already exists.");

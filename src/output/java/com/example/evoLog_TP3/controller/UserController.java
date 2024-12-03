@@ -1,5 +1,4 @@
 package com.example.evoLog_TP3.controller;
-import org.springframework.web.bind.annotation.*;
 @org.springframework.web.bind.annotation.RestController
 @org.springframework.web.bind.annotation.RequestMapping("/api/users")
 public class UserController {

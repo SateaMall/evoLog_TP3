@@ -7,13 +7,7 @@ import java.util.List;
 public class UserProfile {
     @JsonProperty("userId")
     private String userId;
-    @JsonProperty("actions")
-    private List<String> actions;
-
-    public UserProfile(String userId, List<String> actions) {
-        this.userId = userId;
-        this.actions = actions;
-    }
+    
 
     public UserProfile(String userId) {
         this.userId = userId;
